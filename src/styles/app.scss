@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #2f3536;
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.app-header {
+  height: 4vh;
+  padding: 30px;
+  color: #ffcc54;
+  text-align: center;
+
+  .app-title {
+    font-size: 1.5em;
+  }
+}
+
+.contact {
+  display: block;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 5px 0;
+  a {
+    margin: 5px 10px;
+    font-size: 1.5em;
+    color: #ffcc54;
+    text-decoration: none;
+
+    &:hover {
+      color: #c89b20;
+    }
+  }
+}
+
+.error {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 1.5em;
+  color: #ffcc54;
+}
