@@ -13,7 +13,6 @@ body {
   padding: 30px;
   color: #ffcc54;
   text-align: center;
-
   .app-title {
     font-size: 1.5em;
   }
@@ -32,7 +31,6 @@ body {
     font-size: 1.5em;
     color: #ffcc54;
     text-decoration: none;
-
     &:hover {
       color: #c89b20;
     }
@@ -45,3 +43,34 @@ body {
   font-size: 1.5em;
   color: #ffcc54;
 }
+
+.logo {
+  position: relative;
+  width: 40vw;
+  height: 80vh;
+  margin: 0 auto;
+  top: 15px;
+  left: 30%;
+}
+
+.zoom {
+  animation: scale 2s linear infinite;
+}
+
+@keyframes scale {
+  50% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  99% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
