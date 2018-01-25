@@ -45,3 +45,16 @@ body {
   font-size: 1.5em;
   color: #ffcc54;
 }
+
+.accordion-cards {
+  max-height: 80vh;
+  overflow: scroll;
+  background: #eee;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid #060f10;
+  position: relative;
+  width: 85vw;
+  top: 20px;
+}
