@@ -1,34 +1,50 @@
+/* global document */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 class Modal extends React.Component {
+  constructor (props) {
+    super(props);
+    this.hideModal = () => this._hideModal();
+    this.handleEsc = e => this._handleEsc(e);
+  }
+
+  componentDidMount () {
+    document.addEventListener('keyup', this.handleEsc);
+  }
+
+  componentWillUnmount () {
+    document.removeEventListener('keyup');
+  }
+
+  _handleEsc (e) {
+    if (e.keyCode === 27) {
+      this.hideModal();
+    }
+  }
+
+  _hideModal () {
+    this.props.onClose();
+  }
+
   render () {
     const showOrHide = this.props.isVisible ? 'show' : 'hide';
     return (
-      <div className={`modal ${showOrHide}`}>
-        <div className="modal-overlay">
-          <div className="modal-container">
-            <div className="modal-content">
-              <div className="modal-header">
-                <div className="modal-header-content">
-                  {this.props.header}
-                </div>
-                <div
-                  tabIndex="-1"
-                  className="modal-close-button"
-                  role="button"
-                  onClick={this.props.onClose}
-                  onKeyPress={this.props.onClose}
-                >
-                  X
-                </div>
-              </div>
-              <div className="modal-body">
-                body
-              </div>
-              <div className="modal-footer">
-                Footer
-              </div>
+      <div className={`modal ${showOrHide}`} >
+        <div className="modal-overlay" onClick={this.hideModal} role="presentation" />
+        <div className="modal-container">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4>{this.props.header}</h4>
+              <hr />
+              <span
+                onClick={this.hideModal}
+                className="modal-close-button"
+                role="button"
+                tabIndex="-1"
+              >
+                &times;
+              </span>
             </div>
           </div>
         </div>
@@ -42,5 +58,6 @@ Modal.propTypes = {
   header: PropTypes.string,
   isVisible: PropTypes.bool
 };
+
 
 export default Modal;
