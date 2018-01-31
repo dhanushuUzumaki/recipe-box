@@ -3,35 +3,49 @@ import Header from './Header';
 import Footer from './Footer';
 import AccordionCard from './AccordionCard';
 import Modal from './Modal';
+import Input from './Input';
 
 class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      showModal: false
+      showAddRecipeModal: false,
+      currentRecipe: {
+        recipeName: '',
+        ingredients: ''
+      }
     };
-    this.showModal = e => this._showModal(); // eslint-disable-line no-unused-vars
-    this.closeModal = e => this._closeModal(); // eslint-disable-line no-unused-vars
+    /* eslint-disable */
+    this.showAddRecipeModal = e => this._showAddRecipeModal();
+    this.closeAddRecipeModal = e => this._closeAddRecipeModal();
+    this.onRecipeNameChange = value => this._onRecipeNameChange(value);
+    /* eslint-enable */
   }
 
-  _showModal () {
+  _showAddRecipeModal () {
     this.setState({
-      showModal: true
+      showAddRecipeModal: true
     });
   }
 
-  _closeModal () {
+  _closeAddRecipeModal () {
     this.setState({
-      showModal: false
+      showAddRecipeModal: false
+    });
+  }
+
+  _onRecipeNameChange (value) {
+    const currentRecipe = Object.assign({}, this.state.currentRecipe, { recipeName: value });
+    this.setState({
+      currentRecipe
     });
   }
 
   render () {
     return (
       <div>
-        <Modal onClose={this.closeModal} header="Add Recipe" isVisible={this.state.showModal} />
         <Header />
-        <div className="add-recipe"><button onClick={this.showModal}>+</button></div>
+        <div className="add-recipe"><button onClick={this.showAddRecipeModal}>+</button></div>
         <div className="accordion-cards">
           <AccordionCard />
           <AccordionCard />
@@ -44,6 +58,19 @@ class App extends React.Component {
           <AccordionCard />
           <AccordionCard />
         </div>
+        <Modal
+          onClose={this.closeAddRecipeModal}
+          header="Add Recipe"
+          isVisible={this.state.showAddRecipeModal}
+        >
+          <Input
+            type="text"
+            placeholder="Recipie Name"
+            onChange={this.onRecipeNameChange}
+            identifier="recipeName"
+            text={this.state.currentRecipe.recipeName}
+          />
+        </Modal>
         <Footer />
       </div>
     );

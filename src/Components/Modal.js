@@ -46,6 +46,9 @@ class Modal extends React.Component {
                 &times;
               </span>
             </div>
+            <div className="modal-body">
+              {this.props.children}
+            </div>
           </div>
         </div>
       </div>
@@ -56,7 +59,8 @@ class Modal extends React.Component {
 Modal.propTypes = {
   onClose: PropTypes.func,
   header: PropTypes.string,
-  isVisible: PropTypes.bool
+  isVisible: PropTypes.bool,
+  children: PropTypes.node
 };
 
 
