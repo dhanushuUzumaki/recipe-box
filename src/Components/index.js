@@ -68,7 +68,7 @@ class App extends React.Component {
             placeholder="Recipie Name"
             onChange={this.onRecipeNameChange}
             identifier="recipeName"
-            text={this.state.currentRecipe.recipeName}
+            value={this.state.currentRecipe.recipeName}
           />
         </Modal>
         <Footer />

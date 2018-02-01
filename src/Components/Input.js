@@ -13,15 +13,18 @@ class Input extends React.Component {
   }
 
   extractStateFromProps (props) {
+    console.log(props);
     const { value } = props;
-    return value;
+    return {
+      value
+    };
   }
 
   render () {
     return (
       <input
         type={this.props.type}
-        value={this.props.text}
+        value={this.state.value}
         onChange={this.onChange}
         placeholder={this.props.placeholder}
         name={this.props.identifier}
@@ -32,7 +35,7 @@ class Input extends React.Component {
 
 Input.propTypes = {
   type: PropTypes.oneOf('text', 'number'),
-  text: PropTypes.string,
+  value: PropTypes.string,
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
   identifier: PropTypes.string

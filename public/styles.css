@@ -26,7 +26,8 @@
 
 .modal {
   position: fixed;
-  z-index: 3; }
+  z-index: 3;
+  top: 0; }
   .modal .modal-overlay {
     position: relative;
     background: rgba(0, 0, 0, 0.5);
