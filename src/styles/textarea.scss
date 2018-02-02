@@ -1,0 +1,17 @@
+.textarea-container {
+  .textarea {
+    resize: none;
+    width: 98%;
+    margin: 10px 0;
+    font-size: 1em;
+    border: 0;
+    border-bottom: 1px solid #968181;
+    background: transparent;
+    outline: none;
+    height: 80px;
+    &:focus {
+      border-bottom: 1px solid rgb(90, 92, 250);
+      transition: all 0.2s ease-in-out 0s;
+    }
+  }
+}

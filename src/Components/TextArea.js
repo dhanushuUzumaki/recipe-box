@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Input extends React.Component {
+class TextArea extends React.Component {
   constructor (props) {
     super(props);
     this.state = this.extractStateFromProps(props);
@@ -19,25 +19,25 @@ class Input extends React.Component {
   }
 
   render () {
-    const { type, placeholder, identifier, label } = this.props;
+    const { placeholder, identifier, label } = this.props;
     return (
-      <div className="input-container">
-        {label && <div className="input-label">{label}</div>}
-        <input
-          className="input"
-          type={type}
-          value={this.state.value}
+      <div className="textarea-container">
+        {label && <div className="textarea-label">{label}</div>}
+        <textarea
+          className="textarea"
           onChange={this.onChange}
           placeholder={placeholder}
           name={identifier}
-        />
+          data-gramm_editor="false"
+        >
+          {this.state.value}
+        </textarea>
       </div>
     );
   }
 }
 
-Input.propTypes = {
-  type: PropTypes.oneOf('text', 'number'),
+TextArea.propTypes = {
   value: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
@@ -45,4 +45,4 @@ Input.propTypes = {
   label: PropTypes.string
 };
 
-export default Input;
+export default TextArea;

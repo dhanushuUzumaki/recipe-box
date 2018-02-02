@@ -4,6 +4,7 @@ import Footer from './Footer';
 import AccordionCard from './AccordionCard';
 import Modal from './Modal';
 import Input from './Input';
+import TextArea from './TextArea';
 
 class App extends React.Component {
   constructor (props) {
@@ -19,6 +20,7 @@ class App extends React.Component {
     this.showAddRecipeModal = e => this._showAddRecipeModal();
     this.closeAddRecipeModal = e => this._closeAddRecipeModal();
     this.onRecipeNameChange = value => this._onRecipeNameChange(value);
+    this.onIngredientsChange = value => this._onIngredientsChange(value);
     /* eslint-enable */
   }
 
@@ -36,6 +38,13 @@ class App extends React.Component {
 
   _onRecipeNameChange (value) {
     const currentRecipe = Object.assign({}, this.state.currentRecipe, { recipeName: value });
+    this.setState({
+      currentRecipe
+    });
+  }
+
+  _onIngredientsChange (value) {
+    const currentRecipe = Object.assign({}, this.state.currentRecipe, { ingredients: value });
     this.setState({
       currentRecipe
     });
@@ -69,6 +78,12 @@ class App extends React.Component {
             onChange={this.onRecipeNameChange}
             identifier="recipeName"
             value={this.state.currentRecipe.recipeName}
+          />
+          <TextArea
+            placeholder="Ingredients (comma separated)"
+            onChange={this.onIngredientsChange}
+            identifier="ingredients"
+            value={this.state.currentRecipe.ingredients}
           />
         </Modal>
         <Footer />
