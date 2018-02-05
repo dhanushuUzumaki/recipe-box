@@ -29,9 +29,8 @@ class TextArea extends React.Component {
           placeholder={placeholder}
           name={identifier}
           data-gramm_editor="false"
-        >
-          {this.state.value}
-        </textarea>
+          value={this.state.value}
+        />
       </div>
     );
   }

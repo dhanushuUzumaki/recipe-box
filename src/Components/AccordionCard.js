@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class AccordionCard extends React.Component {
   constructor (props) {
@@ -23,14 +24,24 @@ class AccordionCard extends React.Component {
     return (
       <div className="accordion-card">
         <div>
-          <button onClick={this.toggleCard} className="accordion-header">News</button>
+          <button
+            onClick={this.toggleCard}
+            className="accordion-header"
+          >
+            {this.props.header}
+          </button>
         </div>
         <div className={`accordion-body ${showOrHide}`}>
-          Content
+          {this.props.children}
         </div>
       </div>
     );
   }
 }
+
+AccordionCard.propTypes = {
+  header: PropTypes.string,
+  children: PropTypes.node
+};
 
 export default AccordionCard;
