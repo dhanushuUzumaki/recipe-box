@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
@@ -13,6 +14,7 @@ const ExtractTextPluginConfig = new ExtractTextPlugin('styles.css');
 const WebpackCleanupPluginConfig = new WebpackCleanupPlugin();
 const NamedModulesPlugin = new webpack.NamedModulesPlugin();
 const HMRPlugin = new webpack.HotModuleReplacementPlugin();
+const CopyPlugin = new CopyWebpackPlugin([{ from: 'src/static' }]);
 
 module.exports = {
   entry: './src/index.js',
@@ -43,6 +45,7 @@ module.exports = {
   plugins: [
     WebpackCleanupPluginConfig,
     ExtractTextPluginConfig,
+    CopyPlugin,
     HtmlWebpackPluginConfig,
     NamedModulesPlugin,
     HMRPlugin

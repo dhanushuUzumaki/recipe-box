@@ -1,7 +1,7 @@
 {
   "name": "recipe-box",
   "version": "1.0.0",
-  "description": "React based recipe-box done as part of Freecodecamp&#39;s React Project",
+  "description": "Recipe box done as part of freecodecamp&#39;s react project",
   "main": "index.js",
   "scripts": {
     "lint": "node_modules/.bin/esw webpack.config.* src",
@@ -18,7 +18,8 @@
     "url": "https://github.com/dhanushuUzumaki/recipe-box"
   },
   "keywords": [
-    "React"
+    "react",
+    "freecodecamp"
   ],
   "author": {
     "name": "Dhansuhu Uzumaki",
@@ -30,10 +31,9 @@
   },
   "homepage": "https://github.com/dhanushuUzumaki/recipe-box#readme",
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.10.1"
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -41,6 +41,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.3.1",
     "css-loader": "^0.28.8",
     "eslint": "^4.15.0",
     "eslint-config-airbnb": "^16.1.0",
@@ -54,6 +55,8 @@
     "npm-run-all": "^4.1.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.1",
     "webpack-cleanup-plugin": "^0.5.1"
   }
 }
