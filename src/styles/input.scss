@@ -1,0 +1,16 @@
+.input-container {
+  .input {
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid #968181;
+    background: transparent;
+    width: 98%;
+    line-height: 2.5;
+    font-size: 1em;
+    text-transform: capitalize;
+    &:focus {
+      border-bottom: 1px solid rgb(90, 92, 250);
+      transition: all 0.2s ease-in-out 0s;
+    }
+  }
+}
