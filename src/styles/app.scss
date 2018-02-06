@@ -126,21 +126,34 @@ body {
   outline: none;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   &.btn-link {
     background: transparent;
     border: 0;
-    cursor: pointer;
-    color: #7f7fda;
+    color: black;
+    opacity: 0.8;
     font-size: 1em;
   }
   &.btn-primary {
-    background: rgb(66,139,202);
+    background: #ffcc54;
     border: 0;
-    cursor: pointer;
-    color: white;
+    color: black;
     font-size: 1em;
     border-radius: 2px;
     padding: 5px 10px;
+  }
+  &.btn-delete {
+    margin: 20px 0px;
+    border: 0;
+    background: #d9534f;
+    padding: 5px;
+    font-size: 1em;
+    border-radius: 2px;
+    color: white;
+  }
+
+  &.btn-primary,
+  &.btn-delete {
     &.ripple {
       &::after {
         border-radius: 2px;
@@ -151,3 +164,7 @@ body {
   }
 }
 
+.side-heading {
+  font-size: 1.2em;
+  font-weight: bold;
+}

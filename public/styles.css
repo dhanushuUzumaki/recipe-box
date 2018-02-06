@@ -194,24 +194,36 @@ body {
   margin-right: 10px;
   outline: none;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  cursor: pointer; }
   .btn.btn-link {
     background: transparent;
     border: 0;
-    cursor: pointer;
-    color: #7f7fda;
+    color: black;
+    opacity: 0.8;
     font-size: 1em; }
   .btn.btn-primary {
-    background: #428bca;
+    background: #ffcc54;
     border: 0;
-    cursor: pointer;
-    color: white;
+    color: black;
     font-size: 1em;
     border-radius: 2px;
     padding: 5px 10px; }
-    .btn.btn-primary.ripple::after {
-      border-radius: 2px;
-      width: 2px;
-      height: 2px; }
+  .btn.btn-delete {
+    margin: 20px 0px;
+    border: 0;
+    background: #d9534f;
+    padding: 5px;
+    font-size: 1em;
+    border-radius: 2px;
+    color: white; }
+  .btn.btn-primary.ripple::after, .btn.btn-delete.ripple::after {
+    border-radius: 2px;
+    width: 2px;
+    height: 2px; }
+
+.side-heading {
+  font-size: 1.2em;
+  font-weight: bold; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZXMuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
